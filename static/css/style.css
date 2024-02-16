@@ -1,0 +1,169 @@
+
+html, body{
+height: 100%;
+
+}
+
+
+.wrapper{
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+}
+
+
+.fon-text_1{
+border: 2px solid blue;
+padding: 44px;
+background-color: green;
+display: flex;
+justify-content: center;
+
+}
+
+.text_1{
+color: red;
+font-family: monospace;
+overflow: hidden;
+font-size: 32px;
+display: flex;
+justify-content: center;
+
+white-space: normal;
+width: 92ch;
+animation: flashing-border 0.75s step-end 10s,
+printed-text 5s steps(92);
+
+}
+
+@keyframes flashing-border{
+    0%{
+        border-color: orange;
+    }
+    50%{
+        border-color: transparent;
+    }
+    100%{
+        border-color: orange;
+    }
+}
+
+@keyframes printed-text{
+from{
+    width: 0%;
+
+
+    }
+}
+
+
+.text_2{
+color: red;
+font-family: monospace;
+overflow: hidden;
+font-size: 32px;
+display: flex;
+justify-content: center;
+
+white-space: normal;
+width: 92ch;
+animation: flashing-bord 0.75s step-end 10s,
+printed-tex 5s steps(92);
+
+}
+
+@keyframes flashing-bord{
+    0%{
+        border-color: orange;
+    }
+    50%{
+        border-color: transparent;
+    }
+    100%{
+        border-color: orange;
+    }
+}
+
+@keyframes printed-tex{
+from{
+    width: 0%;
+
+
+    }
+}
+
+
+.text_3{
+color: red;
+font-family: monospace;
+overflow: hidden;
+font-size: 32px;
+display: flex;
+justify-content: center;
+
+white-space: normal;
+width: 92ch;
+animation: flashing-bor 0.75s step-end 10s,
+printed-te 5s steps(92);
+
+}
+
+@keyframes flashing-bor{
+    0%{
+        border-color: orange;
+    }
+    50%{
+        border-color: transparent;
+    }
+    100%{
+        border-color: orange;
+    }
+}
+
+@keyframes printed-te{
+from{
+    width: 0%;
+
+
+    }
+}
+
+
+
+.oval {
+position: relative;
+width: 700px;
+height: 500px;
+margin: auto;
+width: 50%;
+background: black;
+border-radius: 700px/600px;
+margin-top: 100px;
+}
+
+
+
+.foot{
+display: flex;
+border: 1px;
+padding: 10px;
+background-color: orange;
+}
+
+
+.p_1{
+
+color: blue;
+top: 2px;
+line-height: 40px;
+}
+
+.p_2{
+
+color: blue;
+top: 2px;
+margin-left: 1200px;
+line-height: 40px;
+}
+

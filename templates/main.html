@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная страница</title>
+    <link href="{{ url_for('static', path='/css/style.css') }}" rel="stylesheet">
+</head>
+<body>
+<div class="wrapper">
+    <main class="main">
+        <nav>
+            <ul>
+                <li><a href="{{url_for('get_main_page')}}">Главная страница</a></li>
+                <li><a href="{{url_for('get_second_page')}}">О компании</a></li>
+                <li><a href="{{url_for('get_our_services')}}">Наши услуги</a></li>
+                <li><a href="{{url_for('get_contacts')}}">Связь с нами</a></li>
+            </ul>
+        </nav>
+
+{% block content %}
+<div style="text-align:center; margin-top:160px">
+    <p>Появилась необходимость в хорошем, работающем сайте?</p>
+    <p>Требуется качественное бизнес-решение? </p>
+    <p>Значит наша веб-студия именно, то что вам нужно.</p>
+    <p>Мы можем гордиться своей работой и успешно удовлетворяем потребности заказчика. </p>
+</div>
+{% endblock %}
+<br>
+<br>
+
+    </main>
+
+    <footer class="foot">
+
+            <div class="p_1">
+                <p>Поддержка</p>
+                <p>Связь с нами</p>
+                <p>Наши услуги</p>
+                <p>О компании</p>
+            </div>
+            <div class="p_2">
+                <p>Политика конфиденциальности</p>
+                <p>Главная страница</p>
+            </div>
+
+    </footer>
+</div>
+</body>
+</html>
