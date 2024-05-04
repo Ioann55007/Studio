@@ -1,9 +1,23 @@
 
 html, body{
 height: 100%;
+}
+
+
+.nav{
+text-align: center;
+}
+
+.header li{
+display: inline;
+margin-left: 55px;
 
 }
 
+.header a{
+text-decoration: none;
+color: brown;
+}
 
 .wrapper{
 min-height: 100vh;
@@ -14,14 +28,45 @@ justify-content: space-between;
 
 
 .fon-text_1{
+/*
 border: 2px solid blue;
 padding: 44px;
 background-color: green;
+*/
 display: flex;
+/*
 justify-content: center;
-
+*/
 }
 
+
+
+.text_1 {
+width: 450px;
+  height: 380px;
+  background: green;
+  border-radius: 2100px/1900px;
+  margin-top: 100px;
+}
+
+.text_2 {
+width: 450px;
+  height: 380px;
+  background: green;
+  border-radius: 2100px/1900px;
+  margin-top: 100px;
+  margin-left: 200px;
+}
+
+.text_3 {
+width: 450px;
+  height: 380px;
+  background: green;
+  border-radius: 2100px/1900px;
+  margin-top: 100px;
+  margin-left: 200px;
+}
+/*
 .text_1{
 color: red;
 font-family: monospace;
@@ -128,7 +173,7 @@ from{
 
     }
 }
-
+*/
 
 
 .oval {
@@ -160,10 +205,46 @@ line-height: 40px;
 }
 
 .p_2{
-
 color: blue;
 top: 2px;
-margin-left: 1200px;
+margin-left: 600px;
+
 line-height: 40px;
 }
 
+.p_3{
+
+color: blue;
+top: 2px;
+margin-left: 700px;
+line-height: 40px;
+}
+
+.modal {
+  display: none; /* скрыт по умолчанию */
+  /* темный фон при открытии модалки должен быть на всю страницу */
+  position: fixed;
+  z-index: 1; /* поверх всех элементов */
+  left: 0;
+  top: 0;
+  width: 100vw; /* полная ширина */
+  height: 100vh; /* полная высота */
+  background-color: rgba(0,0,0,0.4); /* цвет фона - прозрачный черный */
+}
+
+/* само модальное окно с контентом */
+.modal-content {
+  background-color: #fff;
+  /* окно будет находится по центру по горизонтали и с отступом сверху в 100 px */
+  margin: 100px auto;
+  padding: 20px;
+  width: 50%;
+  font-size: 20px;
+  /* разнесем текст и кнопоку по краям окна */
+  display: flex;
+  justify-content: space-between;
+ }
+
+span {
+  cursor: pointer;
+}

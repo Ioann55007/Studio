@@ -1,23 +1,36 @@
 {% extends 'main.html' %}
 
 {% block content %}
-<h1  style="position: relative">Наши контакты</h1>
-<div style="position: absolute">
+
+<div>
+<h1  style="position: relative;top:100px">Наши контакты</h1>
+<div style="position: absolute;top:240px">
 <h3>Телефон</h3>
 <p>70000000000</p>
 <h3>Почта</h3>
 <p>email@studio.ru</p>
 </div>
-<div style="position: absolute; left: 50%">
+</div>
+<div style="position: absolute; left: 50%; top: 15%">
+    <form id="contactForm" action="/submit" method="post">
     <h2 style="text-align: center">Напишите нам</h2>
     <p style="text-align: center">Имя:</p>
-    <input type="text" style="width: 505px">
+    <input type="text" name="name" id="name" style="width: 505px">
     <p style="text-align: center">Телефон:</p>
-    <input type="tel" style="width: 505px">
+    <input type="tel" id="tel" name="tel" style="width: 505px">
     <p style="text-align: center">Сообщение:</p>
-    <textarea cols="70" rows="15"></textarea>
+    <textarea cols="70" rows="15" id="message" name="message"></textarea>
     <div style="text-align: center">
-    <button type="submit">Отправить</button>
+    <button type="submit" id="submit">Отправить</button>
     </div>
+    </form>
 </div>
+<div class="modal">
+    <div class="modal-content">
+      <p>Спасибо за обращение.</p>
+      <span onclick="closeModal();">&times</span>
+    </div>
+  </div>
+<script src="{{ url_for('static', path='/js/contact.js') }}"></script><!-- new -->
+
 {% endblock %}

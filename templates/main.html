@@ -7,9 +7,10 @@
 </head>
 <body>
 <div class="wrapper">
-    <main class="main">
-        <nav>
-            <ul>
+    <main class="main" style="background-color: black">
+
+        <nav class="nav">
+            <ul class="header">
                 <li><a href="{{url_for('get_main_page')}}">Главная страница</a></li>
                 <li><a href="{{url_for('get_second_page')}}">О компании</a></li>
                 <li><a href="{{url_for('get_our_services')}}">Наши услуги</a></li>
@@ -18,15 +19,18 @@
         </nav>
 
 {% block content %}
-<div style="text-align:center; margin-top:160px">
-    <p>Появилась необходимость в хорошем, работающем сайте?</p>
-    <p>Требуется качественное бизнес-решение? </p>
-    <p>Значит наша веб-студия именно, то что вам нужно.</p>
-    <p>Мы можем гордиться своей работой и успешно удовлетворяем потребности заказчика. </p>
+<div style="text-align:center; min-height: 80vh;background:url({{url_for('static', path='/images/yl8PIRZ8fXE.jpg')}})
+ no-repeat;  background-size: 100%; position: relative">
+
+    <div style="margin-top: 8%; margin-left: 40%;position: absolute">
+    <p style="color: beige"><b>Появилась необходимость в хорошем, работающем сайте?</b></p>
+    <p style="color: yellow"><b>Требуется качественное бизнес-решение?</b> </p>
+    <p style="color: white"><b>Значит наша веб-студия именно, то что вам нужно.</b></p>
+    <p style="color: #341ABD"><b>Мы можем гордиться своей работой</b></p>
+    <p style="color: orange"><b>и успешно удовлетворяем потребности заказчика.</b></p>
+</div>
 </div>
 {% endblock %}
-<br>
-<br>
 
     </main>
 
@@ -34,16 +38,19 @@
 
             <div class="p_1">
                 <p>Поддержка</p>
-                <p>Связь с нами</p>
-                <p>Наши услуги</p>
-                <p>О компании</p>
+                <p><a style="text-decoration: none" href="{{url_for('get_contacts')}}">Связь с нами</a></p>
             </div>
             <div class="p_2">
+                <p><a  style="text-decoration: none" href="{{url_for('get_our_services')}}">Наши услуги</a></p>
+                <p><a style="text-decoration: none" href="{{url_for('get_second_page')}}">О компании</a></p>
+            </div>
+            <div class="p_3">
                 <p>Политика конфиденциальности</p>
-                <p>Главная страница</p>
+                <p><a style="text-decoration: none" href="{{url_for('get_main_page')}}">Главная страница</a></p>
             </div>
 
     </footer>
+
 </div>
 </body>
 </html>
