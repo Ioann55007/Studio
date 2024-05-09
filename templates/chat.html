@@ -1,0 +1,78 @@
+
+{% block content %}
+<div style="color:white">
+
+<button class="open-button" onclick="openForm()">Чат</button>
+
+<div class="chat-popup" id="myForm">
+      <form action=""  class="form-container" onsubmit="sendMessage(event)">
+
+
+    <label for="msg"><b>Сообщение</b></label>
+    <textarea placeholder="Тип сообщения.." name="msg" required id="messageText"></textarea>
+     <h2>Your ID: <span id="ws-id" style="color:black"></span></h2>
+
+        <ul id='messages' style="color:black">
+        </ul>
+    <button type="submit" class="btn">Отправить</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Закрыть</button>
+       </form>
+</div>
+
+
+    <script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
+        <script>
+
+            async function getLastMessages(){
+                const  url = 'http://localhost:8000/last_messages'
+                const  response = await fetch(url, {method: 'GET'})
+                return response.json()
+            }
+
+            getLastMessages()
+                .then(messages => {
+                    appendMessage("Предыдущие 5 сообщений:")
+                    messages.forEach(msg => {
+                        appendMessage(msg.message)
+                    })
+                    appendMessage("\nНовые сообщения:")
+                })
+
+
+
+            function appendMessage(msg) {
+                let messages = document.getElementById('messages')
+                let message = document.createElement('li')
+                let content = document.createTextNode(msg)
+                message.appendChild(content)
+                messages.appendChild(message)
+            }
+
+            let client_id = Date.now()
+            document.querySelector("#ws-id").textContent = client_id;
+            let ws = new WebSocket(`ws://localhost:8000/ws/${client_id}`);
+            ws.onmessage = function(event) {
+                let messages = document.getElementById('messages')
+                let message = document.createElement('li')
+                let content = document.createTextNode(event.data)
+                message.appendChild(content)
+                messages.appendChild(message)
+            };
+            function sendMessage(event) {
+                let textarea = document.getElementById("messageText")
+                ws.send(textarea.value)
+                textarea.value = ''
+                event.preventDefault()
+            }
+        </script>
+</div>
+
+{% endblock %}
