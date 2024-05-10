@@ -68,6 +68,11 @@ def submit(request: Request, name: str = Form(), tel: str = Form(), message: str
     return templates.TemplateResponse("contacts.html", {"request": request})
 
 
+@router.get('/confidently')
+def confidently(request: Request):
+    return templates.TemplateResponse("confidentiality.html", {"request": request})
+
+
 class ConnectionManager:
     def __init__(self):
         self.active_connections: List[WebSocket] = []
@@ -123,11 +128,6 @@ async def websocket_endpoint(websocket: WebSocket, client_id: int):
 
 
 manager = ConnectionManager()
-
-
-@router.get('/chat')
-def get_chat(request: Request):
-    return templates.TemplateResponse("chat.html", {"request": request})
 
 
 @router.websocket("/ws/{client_id}")
